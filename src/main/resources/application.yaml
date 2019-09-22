@@ -1,0 +1,13 @@
+server:
+  port: 9080
+
+spring:
+  datasource:
+    driverClassName:   oracle.jdbc.OracleDriver
+    url:   jdbc:oracle:thin:@localhost:1521/study
+    username:   resourcerole
+    password:   resourcerole
+  jpa:
+    database:   ORACLE
+    generateDdl:   true
+    showSql:   true

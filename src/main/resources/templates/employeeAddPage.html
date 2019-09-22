@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div th:replace="navigator.html :: html"></div>
+<h2>员工信息添加页面</h2>
+<!--<div style="padding: 100px 100px 10px;">-->
+<!--    <form class="bs-example bs-example-form" role="form"  action="#" th:action="@{/addOne}" method="get" th:object="${employee}" >-->
+<!--        <div class="input-group">-->
+<!--            <span class="input-group-addon">姓名</span>-->
+<!--            <input type="text" class="form-control" placeholder="这里填写姓名" name="name" th:filed="*{name} />-->
+<!--        </div>-->
+<!--        <br>-->
+<!--        <div class="input-group">-->
+<!--            <span class="input-group-addon">年龄</span>-->
+<!--            <input type="text" class="form-control" placeholder="这里填写年龄" name="age" th:filed="*{age}">-->
+<!--        </div>-->
+<!--        <div class="input-group">-->
+<!--            <input type="submit">-->
+<!--        </div>-->
+<!--        <br>-->
+<!--    </form>-->
+
+    <form aaction="#" th:action="@{/employee/addOne}" method="get" th:object="${employee}">
+        <input type="text" th:field="*{name}" />
+        <input type="text" th:field="*{age}" />
+        <input type="submit" />
+    </form>
+</div>
+</body>
+</html>

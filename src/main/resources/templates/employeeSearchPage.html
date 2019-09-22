@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style type="text/css">
+        .bg-table-head{
+            background: #3CA4ED;
+            color: white;
+        }
+        .table th,td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="navigator.html :: html"></div>
+<h2>员工信息查询页面</h2>
+
+<table class="table">
+    <caption>员工信息表</caption>
+    <thead class="bg-table-head">
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>年龄</th>
+        <th>年龄</th>
+        <th>年龄</th>
+        <th>年龄</th>
+        <th>年龄</th>
+        <th>年龄</th>
+        <th>年龄</th>
+        <th>年龄</th>
+    </tr>
+    </thead>
+    <tbody th:each="employee,employeeStat :${employeeList} ">
+    <tr  th:if="${employeeStat.index} <10">
+        <td th:text="${employeeStat.index+1}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.age}"></td>
+        <td th:text="${employee.age}"></td>
+        <td th:text="${employee.age}"></td>
+        <td th:text="${employee.age}"></td>
+        <td th:text="${employee.age}"></td>
+        <td th:text="${employee.age}"></td>
+        <td th:text="${employee.age}"></td>
+        <td th:text="${employee.age}"></td>
+        <td th:text="${employee.age}"></td>
+    </tr>
+    <tr th:if="${employeeStat.index} ==2">
+        <td colspan="11" >
+            <div class="form-inline">
+                <div class="form-group ">
+                    <label for="name-o">名称</label>
+                    <input type="text" class="form-control" id="name-o" placeholder="请输入名称">
+                </div>
+                <div class="form-group">
+                    <label for="name-o1">名称</label>
+                    <input type="text" class="form-control" id="name-o1" placeholder="请输入名称">
+                </div>
+                <div class="form-group">
+                    <label for="name-o3">名称</label>
+                    <input type="text" class="form-control" id="name-o3" placeholder="请输入名称">
+                </div>
+                <div class="form-group">
+                    <label for="name-o4">名称</label>
+                    <input type="text" class="form-control" id="name-o4" placeholder="请输入名称">
+                </div>
+                <div class="form-group">
+                    <label for="name-o5">名称</label>
+                    <input type="text" class="form-control" id="name-o5" placeholder="请输入名称">
+                </div>
+            </div>
+
+            <div class="form-inline">
+                <div class="form-group ">
+                    <label for="name">名称</label>
+                    <input type="text" class="form-control" id="name" placeholder="请输入名称">
+                </div>
+                <div class="form-group">
+                    <label for="name1">名称</label>
+                    <input type="text" class="form-control" id="name1" placeholder="请输入名称">
+                </div>
+                <div class="form-group">
+                    <label for="name3">名称</label>
+                    <input type="text" class="form-control" id="name3" placeholder="请输入名称">
+                </div>
+                <div class="form-group">
+                    <label for="name4">名称</label>
+                    <input type="text" class="form-control" id="name4" placeholder="请输入名称">
+                </div>
+                <div class="form-group">
+                    <label for="name5">名称</label>
+                    <input type="text" class="form-control" id="name5" placeholder="请输入名称">
+                </div>
+            </div>
+            
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div  class="pagination-wrap text-right">
+    <ul class="pagination">
+        <li><a>共10页</a></li>
+        <li><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li class="disabled"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+        <li><a href="#">跳转到第<input type="text">页</a></li>
+    </ul>
+</div>
+
+<footer class="text-center  ">
+    <p>Copyright &copy; 2018 Company Name | Designed by
+        <a href="http://www.csdn.com" target="_parent">csdn</a>
+    </p>
+</footer>
+</body>
+</html>
